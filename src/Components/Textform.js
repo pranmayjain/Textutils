@@ -21,9 +21,7 @@ export default function Textform(props) {
     props.showAlert("Text Cleared", "success");
   };
   const handleCopy = () => {
-    let text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
+    navigator.clipboard.writeText(text);
     props.showAlert("Copied to clipboard", "success");
   };
   const handleExtraSpaces = () => {
@@ -34,7 +32,7 @@ export default function Textform(props) {
   return (
     <>
       <div className="container">
-        <h1 className={`txt-${props.mode}`}>{props.heading}</h1>
+        <h1 className={`txt-${props.mode} mb-2`}>{props.heading}</h1>
         <div className="mb-3">
           <textarea
             className={`form-control shadow-none border-${props.mode}`}
@@ -45,48 +43,54 @@ export default function Textform(props) {
           ></textarea>
         </div>
         <button
-          className={`btn bt-${props.mode} shadow-none`}
+          disabled={text.length === 0}
+          className={`btn bt-${props.mode} my-1 shadow-none`}
           onClick={handleUpClick}
         >
           Convert to Uppercase
         </button>
         <button
-          className={`btn bt-${props.mode} mx-2 shadow-none`}
+          disabled={text.length === 0}
+          className={`btn bt-${props.mode} mx-2 my-1 shadow-none`}
           onClick={handleLoClick}
         >
           Convert to Lowercase
         </button>
         <button
-          className={`btn bt-${props.mode} shadow-none`}
+          disabled={text.length === 0}
+          className={`btn bt-${props.mode} my-1 shadow-none`}
           onClick={handleClearClick}
         >
           Clear Text
         </button>
         <button
-          className={`btn bt-${props.mode} mx-2 shadow-none`}
+          disabled={text.length === 0}
+          className={`btn bt-${props.mode} mx-2 my-1 shadow-none`}
           onClick={handleCopy}
         >
           Copy Text
         </button>
         <button
-          className={`btn bt-${props.mode} shadow-none`}
+          disabled={text.length === 0}
+          className={`btn bt-${props.mode} my-1 shadow-none`}
           onClick={handleExtraSpaces}
         >
           Remove Extra Spaces
         </button>
       </div>
-      <div className={`container my-4 txt-${props.mode} shadow-none`}>
+      <div className={`container my-4 txt-${props.mode} my-2 shadow-none`}>
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").length} words, {text.length} characters
+          {
+            text.split(/\s+/).filter((element) => {
+              return element.length !== 0;
+            }).length
+          }{" "}
+          words, {text.length} characters
         </p>
         <p>{text.split(" ").length * 0.008} minutes to read</p>
         <h2 className={`txt-${props.mode}`}>Preview</h2>
-        <p>
-          {text.length > 0
-            ? text
-            : "Enter something in the above textbox to to preview it here"}
-        </p>
+        <p>{text.length > 0 ? text : "Nothing to preview!"}</p>
       </div>
     </>
   );

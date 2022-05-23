@@ -51,9 +51,9 @@ function App() {
               path="/"
               element={ */}
         <Textform
-          heading="Enter the text to analyze below"
           mode={mode}
           showAlert={showAlert}
+          heading="Textutils - Word Counter, Character Counter, Remove extra spaces"
         />
         {/* } */}
         {/* ></Route> */}
