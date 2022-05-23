@@ -1,0 +1,22 @@
+.bgn-dark{
+    background-color: #000000;
+}
+.nb-dark{
+    color: #ffffff;
+}
+.nb-dark:hover{
+    color: #828282;
+}
+.bgn-light{
+    background-color: #7952B3;
+}
+.nb-light{
+    color: #ffffff;
+}
+.nb-light:hover{
+    color: #d6baff;
+}
+.sw-color{
+    background-color:#ffffff;
+    color: #000000;
+}

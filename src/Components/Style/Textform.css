@@ -1,0 +1,26 @@
+.bt-dark {
+    background-color: #000000;
+    color: #ffffff
+}
+.bt-dark:hover {
+    color: #d0d0d0;
+}
+.border-dark:focus {
+    color: #828282;
+}
+.bt-light {
+    background-color: #7952B3;
+    color: #ffffff
+}
+.bt-light:hover {
+    color: #f4ecff;
+}
+.border-light:focus {
+    border-color: #cbaaff;
+}
+.txt-dark{
+    color: #ffffff;
+}
+.txt-light{
+    color: #1c1c1c;
+}

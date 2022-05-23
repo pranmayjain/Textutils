@@ -1,0 +1,12 @@
+.btn-color {
+    background-color: #7952B3;
+    color: #ffffff
+}
+
+.btn-color:hover {
+    color: #f4ecff;
+}
+
+.border-color:focus {
+    border-color: #cbaaff;
+}

@@ -1,0 +1,22 @@
+Props:
+Props are properties which we can sent to a custom component, which can be use by that component.
+
+Modules:
+If we want to export anything from one module to another then we have to pass in {} brackets if the value is by default exported then we don't have to use {} brackets.
+
+-> We can use rfc shortcut for react function based component.
+-> We dont have to change props values inside components.
+-> propTypes is used to declare the type of props. If we pass diffrent propTypes in comparision to what we declare then the console will give us the error as invalid proptype.
+ex: 
+Navbar.propTypes = {
+	title: PropTypes.string,
+        about: PropTypes.string
+}
+
+
+State:
+State belongs to a class and when we update the value of state it changes it the whole component where it was used.
+ex:
+const [count, setText] = useState('Enter text here');
+
+Here 1st variable count is defining the intial value that we passed in useState() and 2nd variable is used to update the value of state.
